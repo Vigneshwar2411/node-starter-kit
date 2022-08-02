@@ -1,0 +1,26 @@
+@import '~styles/palette';
+@import '~styles/typography';
+
+.error {
+
+  h1 {
+    @include typography-sans;
+    @include color-tertiary(color);
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    @include typography-sans;
+    @include color-tertiary(color);
+  }
+
+  .line1 {
+    @include color-neutral(color, white20);
+    margin-top: 1rem;
+  }
+
+  .line2 {
+    @include color-neutral(color, white20);
+    padding-bottom: 1rem;
+  }
+}

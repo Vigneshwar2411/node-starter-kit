@@ -1,0 +1,89 @@
+@import 'colors/cooper-blue';
+@import 'colors/dark-blue';
+@import 'colors/cooper-green';
+@import 'colors/greyscale';
+@import 'colors/navy-blue';
+@import 'colors/cooper-orange';
+@import 'colors/cooper-red';
+
+$COLOR_TRANSLUCENT_GREY: rgba(10, 10, 10, 0.5);
+$COLOR_TRANSPARENT: rgba(0, 0, 0, 0);
+$COLOR_BLACK: rgba(0, 0, 0, 1);
+$COLOR_WHITE: rgba(255, 255, 255, 1);
+$NOTEPAD_YELLOW: rgba(255, 252, 209, 1);
+
+@mixin color-primary($prop, $shade: baseline) {
+  #{$prop}: cooper-blue($shade);
+}
+
+@mixin color-secondary($prop, $shade: baseline) {
+  #{$prop}: dark-blue($shade);
+}
+
+@mixin color-tertiary($prop, $shade: baseline) {
+  #{$prop}: navy-blue($shade);
+}
+
+@mixin color-success($prop, $shade: baseline) {
+  #{$prop}: cooper-green($shade);
+}
+
+@mixin color-warning($prop, $shade: baseline) {
+  #{$prop}: cooper-orange($shade);
+}
+
+@mixin color-alert($prop, $shade: baseline) {
+  #{$prop}: cooper-red($shade);
+}
+
+@mixin color-error($prop, $shade: baseline) {
+  #{$prop}: cooper-red($shade);
+}
+
+@mixin color-neutral($prop, $shade: baseline) {
+  #{$prop}: greyscale($shade);
+}
+
+@mixin color-table-row($prop) {
+  #{$prop}: greyscale(white90);
+}
+
+@mixin color-translucent-grey($prop) {
+  #{$prop}: $COLOR_TRANSLUCENT_GREY;
+}
+
+@mixin color-transparent($prop) {
+  #{$prop}: $COLOR_TRANSPARENT;
+}
+
+@mixin color-pure-black($prop) {
+  #{$prop}: $COLOR_BLACK;
+}
+
+@mixin color-pure-white($prop) {
+  #{$prop}: $COLOR_WHITE;
+}
+
+@mixin color-notepad-yellow($prop) {
+  #{$prop}: $NOTEPAD_YELLOW;
+}
+
+@mixin color-select($color, $prop, $shade: baseline) {
+  @if $color == primary {
+    @include color-primary($prop, $shade);
+  } @else if $color == secondary {
+    @include color-secondary($prop, $shade);
+  } @else if $color == tertiary {
+    @include color-tertiary($prop, $shade);
+  } @else if $color == success {
+    @include color-success($prop, $shade);
+  } @else if $color == warning {
+    @include color-warning($prop, $shade);
+  } @else if $color == alert {
+    @include color-alert($prop, $shade);
+  } @else if $color == error {
+    @include color-error($prop, $shade);
+  } @else if $color == neutral {
+    @include color-neutral($prop, $shade);
+  }
+}

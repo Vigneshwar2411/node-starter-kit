@@ -1,0 +1,13 @@
+@import '../Error.style';
+
+.server-error {
+
+  img {
+    height: 20rem;
+  }
+
+  .page-content {
+    @include typography-sans;
+    margin-top: 2rem;
+  }
+}

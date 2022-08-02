@@ -1,0 +1,16 @@
+@import 'helpers';
+
+$dark-blue: (
+  white90: #E8F1F4,
+  white80: #D1E2E9,
+  white60: #A4C4D3,
+  white40: #76A7BE,
+  white20: #4989A8,
+  baseline: #1B6C92,
+  black20: #155674,
+  black40: #104057
+);
+
+@function dark-blue($shade) {
+  @return get-color-from-map($dark-blue, $shade);
+}

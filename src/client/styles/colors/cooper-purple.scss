@@ -1,0 +1,17 @@
+/* UPDATE: added */
+@import 'helpers';
+
+$cooper-purple: (
+        white90: #F8E7F3,
+        white80: #F2D1E8,
+        white60: #E6A3D1,
+        white40: #D974BA,
+        white20: #CD46A3,
+        baseline: #C0188C,
+        black20: #991370,
+        black40: #5B0B43
+);
+
+@function cooper-orange($shade) {
+  @return get-color-from-map($cooper-purple, $shade);
+}

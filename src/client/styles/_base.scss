@@ -1,0 +1,70 @@
+// sass-lint:disable no-color-keywords
+
+@import 'colors/cooper-blue';
+@import 'colors/dark-blue';
+@import 'colors/cooper-green';
+@import 'colors/greyscale';
+@import 'colors/navy-blue';
+@import 'colors/cooper-orange';
+@import 'colors/cooper-red';
+
+$COLOR_GREY: rgb(128, 128, 128);
+$COLOR_BLACK: rgb(0, 0, 0);
+$COLOR_WHITE: rgb(255, 255, 255);
+
+$sans: 'Lato', 'LatoWeb', sans-serif;
+$serif: 'Sentinel A', 'Sentinel B', serif;
+
+$body-font-family: $sans;
+$font-family-sans-serif: $sans;
+$font-family-serif: $serif;
+
+$foundation-palette: (
+  primary: cooper-blue(baseline),
+  secondary: dark-blue(baseline),
+  tertiary: navy-blue(baseline),
+  success: cooper-green(baseline),
+  warning: cooper-orange(baseline),
+  alert: cooper-red(baseline),
+  error: cooper-red(baseline),
+);
+
+$neutrals-palette: (
+  black: greyscale(black80),
+  very-dark-grey: greyscale(baseline),
+  dark-grey: greyscale(baseline),
+  grey: greyscale(white20),
+  medium-grey: greyscale(white40),
+  medium-light-grey: greyscale(white80),
+  light-grey: greyscale(white90),
+  very-light-grey: greyscale(white95),
+  off-white: greyscale(white95),
+  white: greyscale(white100),
+  transparent: rgba(0, 0, 0, 0)
+);
+
+$app-palette: (
+  blue-primary: map-get($foundation-palette, secondary),
+  grey: greyscale(white95),
+  light-grey: greyscale(white95),
+  translucent-grey: rgba(10, 10, 10, 0.5),
+  disabled-blue: dark-blue(white80),
+  table-grey: greyscale(white90)
+);
+
+$light-gray: map-get($neutrals-palette, very-light-grey); //used by foundation
+$medium-gray: map-get($neutrals-palette, light-grey); //used by foundation
+$dark-gray: map-get($neutrals-palette, dark-grey); //used by foundation
+$gray: $COLOR_GREY; //used by foundation
+$black: $COLOR_BLACK; //used by foundation
+$white: $COLOR_WHITE; //used by foundation
+
+$servicing-primary: map-get($foundation-palette, secondary);
+$application-primary: greyscale(white20);
+
+$body-background: $COLOR_WHITE;
+$body-font-color: $COLOR_BLACK;
+
+$global-font-size: 100%;
+$global-width: 75rem;
+$global-lineheight: 1.5;

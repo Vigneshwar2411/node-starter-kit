@@ -1,0 +1,250 @@
+@import 'palette';
+
+$SANS_FONT: 'Lato', 'Arial', sans-serif;
+$SERIF_FONT: 'Sentinel', 'Georgia', serif;
+
+$SIZE: (
+  xxl: 2rem,
+  xl: 1.75rem,
+  lg: 1.5rem,
+  mdlg: 1.25rem,
+  md: 1rem,
+  mdsm: 0.875rem,
+  sm: 0.75rem,
+  xs: 0.5rem
+);
+
+$WEIGHT: (
+  bold: 700,
+  semibold: 600,
+  normal: 400
+);
+
+/*  Generic Mixins
+ *  =========================================================================*/
+@mixin typography-sans {
+  font-family: $SANS_FONT;
+}
+
+@mixin typography-serif {
+  font-family: $SERIF_FONT;
+}
+
+@mixin typography-xxl {
+  font-size: map-get($SIZE, xxl);
+}
+
+@mixin typography-xl {
+  font-size: map-get($SIZE, xl);
+}
+
+@mixin typography-lg {
+  font-size: map-get($SIZE, lg);
+}
+
+@mixin typography-mdlg {
+  font-size: map-get($SIZE, mdlg);
+}
+
+@mixin typography-md {
+  font-size: map-get($SIZE, md);
+}
+
+@mixin typography-mdsm {
+  font-size: map-get($SIZE, mdsm);
+}
+
+@mixin typography-sm {
+  font-size: map-get($SIZE, sm);
+}
+
+@mixin typography-xs {
+  font-size: map-get($SIZE, xs);
+}
+
+@mixin typography-bold {
+  font-weight: map-get($WEIGHT, bold);
+}
+
+@mixin typography-semibold {
+  font-weight: map-get($WEIGHT, semibold);
+}
+
+@mixin typography-normal {
+  font-weight: map-get($WEIGHT, normal);
+}
+
+@mixin typography-uppercase {
+  text-transform: uppercase;
+}
+
+@mixin typography-normalcase {
+  text-transform: none;
+}
+
+@mixin typography-capitalize {
+  text-transform: capitalize;
+}
+
+/*  Presets
+ *  =========================================================================*/
+@mixin typography-header($family: sans, $color: primary) {
+  @include typography-uppercase;
+
+  @if $family == serif {
+    @include typography-serif;
+    @include typography-semibold;
+  } @else {
+    @include typography-sans;
+    @include typography-bold;
+  }
+
+  @if $color == secondary {
+    @include color-tertiary(color);
+
+    .apollo-icon {
+      @include color-tertiary(stroke);
+    }
+  } @else {
+    @include color-neutral(color);
+
+    .apollo-icon {
+      @include color-neutral(stroke);
+    }
+  }
+
+  letter-spacing: 0;
+}
+
+@mixin typography-h1($family: sans, $color: primary) {
+  @include typography-xxl;
+  @include typography-header($family, $color);
+}
+
+@mixin typography-h2($family: sans, $color: primary) {
+  @include typography-xl;
+  @include typography-header($family, $color);
+}
+
+@mixin typography-h3($color: primary) {
+  @include typography-lg;
+  @include typography-header(sans, $color);
+}
+
+@mixin typography-h4($color: primary) {
+  @include typography-mdlg;
+  @include typography-header(sans, $color);
+}
+
+@mixin typography-h5($color: primary) {
+  @include typography-md;
+  @include typography-sans;
+  @include typography-uppercase;
+
+  @if $color == secondary {
+    @include color-secondary(color);
+
+    .apollo-icon {
+      @include color-tertiary(stroke);
+    }
+  } @else {
+    @include color-neutral(color);
+
+    .apollo-icon {
+      @include color-neutral(stroke);
+    }
+  }
+
+  letter-spacing: 0;
+}
+
+@mixin typography-paragraph($size: medium) {
+  @include typography-sans;
+  @include typography-normal;
+  @include color-neutral(color);
+  letter-spacing: 0;
+
+  @if $size == small {
+    @include typography-sm;
+  } @else {
+    @include typography-md;
+  }
+}
+
+@mixin typography-link($size: medium) {
+  @include typography-sans;
+  @include typography-normal;
+  @include color-secondary(color);
+
+  @if $size == small {
+    @include typography-sm;
+  } @else {
+    @include typography-md;
+  }
+}
+
+@mixin typography-button($size: medium) {
+  @include typography-sans;
+  @include typography-bold;
+  @include typography-uppercase;
+
+  @if $size == small {
+    @include typography-sm;
+  } @else {
+    @include typography-mdsm;
+  }
+
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: inherit;
+  text-align: center;
+  letter-spacing: 1px;
+
+  &:hover, &:focus, &:active {
+    text-decoration: none;
+  }
+}
+
+@mixin typography-navigation {
+  @include typography-sans;
+  @include typography-bold;
+  @include typography-uppercase;
+  @include color-neutral(color);
+
+  font-size: 0.6875rem;
+}
+
+@mixin typography-disclaimer {
+  @include typography-sans;
+  @include typography-bold;
+  @include typography-xs;
+  @include color-neutral(color);
+}
+
+@mixin typography-title {
+  @include typography-sans;
+  @include typography-sm;
+  @include typography-bold;
+  @include typography-uppercase;
+  @include color-tertiary(color);
+
+  padding: 0;
+  letter-spacing: 0.5px;
+}
+
+@mixin typography-closing-title {
+  @include typography-sans;
+  @include typography-bold;
+  @include color-tertiary(color);
+}
+
+@mixin smooth-font {
+  $smoothTextShadowColor: rgba(0, 0, 0, 0.01) 0 0 1px;
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-variant-ligatures: none;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: $smoothTextShadowColor;
+}

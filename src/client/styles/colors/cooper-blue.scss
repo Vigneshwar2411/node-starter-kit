@@ -1,0 +1,16 @@
+@import 'helpers';
+
+$cooper-blue: (
+  white90: #E5F8FB,
+  white80: #CCF0F6,
+  white60: #99E1ED,
+  white40: #66D2E4,
+  white20: #33C3DB,
+  baseline: #00B4D2,
+  black20: #0090A8,
+  black40: #006C7E
+);
+
+@function cooper-blue($shade) {
+  @return get-color-from-map($cooper-blue, $shade);
+}

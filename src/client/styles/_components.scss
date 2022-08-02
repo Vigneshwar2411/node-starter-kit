@@ -1,0 +1,9 @@
+$shadow_color: rgba(10, 10, 10, 0.5);
+
+@mixin shadow($left: 0, $top: 0, $blur: 0, $spread: 0) {
+  box-shadow: $left $top $blur $spread $shadow_color;
+}
+
+@mixin shadow-bottom-only {
+  box-shadow: 0 2px 1px -1px $shadow_color;
+}

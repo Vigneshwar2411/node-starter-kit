@@ -1,0 +1,16 @@
+@import 'helpers';
+
+$cooper-orange: (
+  white90: #FDF1E5,
+  white80: #FAE3CC,
+  white60: #F5C799,
+  white40: #F0AB66,
+  white20: #EB8F33,
+  baseline: #E67300,
+  black20: #B85C00,
+  black40: #8A4500
+);
+
+@function cooper-orange($shade) {
+  @return get-color-from-map($cooper-orange, $shade);
+}

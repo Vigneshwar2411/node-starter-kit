@@ -1,0 +1,19 @@
+@import 'helpers';
+
+$greyscale: (
+  white100: #FFF,
+  white98: #FAFAFA,
+  white95: #F5F5F5,
+  white90: #EBEBEC,
+  white80: #D6D7D8,
+  white60: #ADAFB2,
+  white40: #84888C,
+  white20: #5B6066,
+  baseline: #333940,
+  black50: #1A1D20,
+  black80: #0A0B0C
+);
+
+@function greyscale($shade) {
+  @return get-color-from-map($greyscale, $shade);
+}

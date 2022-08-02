@@ -1,0 +1,11 @@
+@import '~styles/typography';
+
+.feature-flags-page {
+  thead {
+    background-color: transparent;
+  }
+
+  td {
+    @include typography-paragraph;
+  }
+}

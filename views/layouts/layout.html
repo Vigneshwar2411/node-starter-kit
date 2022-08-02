@@ -1,0 +1,48 @@
+<html>
+<head>
+    <meta name="theme-color" content="#317EFB"/>
+    <base href="/"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src='{{appRoute}}/assets.js'></script>
+    <script>
+      if (window.assets['style.css']) {
+        var link = document.createElement("link");
+        link.rel = 'stylesheet';
+        link.href = '{{appRoute}}' + '/' + window.assets['style.css'];
+        document.getElementsByTagName("head")[0].appendChild(link);
+      }
+    </script>
+
+</head>
+<body>
+<script type="text/javascript">
+  window.__CONFIG__ = '{{{config}}}';
+</script>
+<input type='hidden' name='_csrf' id='csrf_token' value="{{csrftoken}}"/>
+<input type='hidden' name='_has_session' id='has_session_token' value="{{hasSession}}"/>
+<div id="app"></div>
+<noscript>
+    <div class='no-script-message'>
+        <p>JavaScript is currently disabled</p>
+        <p>Please enable JavaScript to access mrcooper.com</p>
+    </div>
+</noscript>
+<script>
+  function loadScripts(sources) {
+    for (var i = 0; i < sources.length; i++) {
+      var s = document.createElement('script');
+      s.src = '{{appRoute}}' + '/' + sources[i];
+      s.type = "text/javascript";
+      s.async = false;
+      document.getElementsByTagName('head')[0].appendChild(s);
+    }
+  };
+  var scripts = [
+    window.assets['vendor.js'],
+    window.assets['bundle.js']
+  ];
+  loadScripts(scripts);
+</script>
+
+</body>
+</html>

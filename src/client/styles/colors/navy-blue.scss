@@ -1,0 +1,16 @@
+@import 'helpers';
+
+$navy-blue: (
+  white90: #E5ECEF,
+  white80: #CCD9DF,
+  white60: #99B3C0,
+  white40: #668EA0,
+  white20: #336881,
+  baseline: #004261,
+  black20: #00344D,
+  black40: #00273A
+);
+
+@function navy-blue($shade) {
+  @return get-color-from-map($navy-blue, $shade);
+}

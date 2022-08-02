@@ -1,0 +1,32 @@
+{
+    "env": {
+        "browser": true
+    },
+    "extends": "airbnb",
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "func-names": ["error", "always", { "generators": "as-needed" }],
+        "import/no-extraneous-dependencies": ["error", {
+            "devDependencies": true
+        }],
+        "react/destructuring-assignment": "off",
+        "react/jsx-sort-default-props": "error",
+        "react/sort-prop-types": ["error", {
+            "callbacksLast": true,
+            "ignoreCase": true,
+            "requiredFirst": true,
+            "noSortAlphabetically": false
+        }],
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/no-static-element-interactions": "off"
+    },
+    "settings": {
+        "import/resolver": "webpack"
+    }
+}

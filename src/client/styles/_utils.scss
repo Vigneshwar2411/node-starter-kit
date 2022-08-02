@@ -1,0 +1,29 @@
+@import 'colors/greyscale';
+
+$COLOR_SCROLL_THUMB: rgba(0, 0, 0, 0.5);
+$COLOR_SCROLL_TRACK: rgba(0, 0, 0, 0);
+
+@mixin utils-scrollbar {
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+
+  &::-webkit-scrollbar:vertical {
+    width: 11px;
+  }
+
+  &::-webkit-scrollbar:horizontal {
+    height: 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 2px solid greyscale(white100);
+    background-color: $COLOR_SCROLL_THUMB;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $COLOR_SCROLL_TRACK;
+    border-radius: 8px;
+  }
+}

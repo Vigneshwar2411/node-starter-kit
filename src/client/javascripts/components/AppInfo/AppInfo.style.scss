@@ -1,0 +1,44 @@
+@import '~styles/palette';
+
+header {
+    @include color-primary(background-color);
+
+    .header-info {
+        padding: 1rem 1.5rem 1rem 1.5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &__left {
+            display: flex;
+            flex: 1;
+
+            .mrcooper-logo {
+                max-height: 2rem;
+            }
+            
+            .app-logo {
+                font-size: 1.5rem;
+                top: 0.2rem;
+                font-weight: bold;
+                border-left: white 1px solid;
+                position: relative;
+                margin-left: 0.5rem;
+                padding-left: 0.5rem;
+                color: white;
+            }
+        }
+
+        &__right {
+            display: inline-block;
+            text-align: right;
+            position: relative;
+            font-size: 1.4rem;
+            color: white;
+
+            .user-name {
+                font-weight: bold;
+            }
+        }
+    }
+}
